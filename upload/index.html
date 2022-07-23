@@ -1,0 +1,21 @@
+<el-upload
+        :accept="accept"
+        ref="upload"
+        :multiple="multiple"
+        :limit="limit"
+        :list-type="listType"
+        :on-change="handleChange"
+        :on-remove="handleRemove"
+        :on-exceed="handleExceed"
+        :file-list="fileList"
+        :http-request="uploadFile"
+        :auto-upload="false">
+    <template v-if="isImage">
+        <i class="el-icon-plus"></i>
+    </template>
+    <template v-else>
+        <el-button slot="trigger" type="primary" size="mini">
+            <i class="el-icon-upload2">上传附件</i>
+        </el-button>
+    </template>
+</el-upload>
